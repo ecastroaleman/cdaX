@@ -20,8 +20,8 @@ var isScreenTall2 = screen2.height > 736 ? true : false
   
 
 struct Login: View {
-    @State var email: String = ""
-    @State var password: String = ""
+    @State var email: String = "c206"
+    @State var password: String = "c206"
     @Binding var show: Bool
     @State private var showAlert = false
      let networkingService = NetworkingService()
@@ -112,6 +112,7 @@ struct Login: View {
                         .padding(12)
                     TextField("Your email", text: $email)
                         .frame(height: 72)
+                    
                 }
                 Divider()
                 HStack {
@@ -153,20 +154,23 @@ struct Login: View {
                         let parameters = ["username": self.email, "password": self.password,"grant_type":"password"]
                         
                         self.networkingService.request(endpoint: "token", parameters: parameters as [String : Any]) {  (result) in
-                                       switch result {
-                                           
+                         
+                            switch result {
                                        case .success(let user):
+                                          
                                         var token = user.access_token
-                                         /*  self.performSegue(withIdentifier: "menuPrincipal", sender: user)*/
+                                        print("apellido -> \(user.Apellido)")
+                                        print("rol -> \(user.Rol)")
+                                        /*  self.performSegue(withIdentifier: "menuPrincipal", sender: user)*/
                                         print("Login exitoso -> \(token)")
                                        case .failure(let error):
                                           // var retorno = ""
                                            if (error.localizedDescription == "invalid_grant"){
-                                              
+                                           
                                            } //else {retorno = error.localizedDescription}
                                        
                                           // self.muestraAlerta(msg: "Alerta")
-                                          
+                                             print("Error -> \(error.localizedDescription)")
                                            self.showAlert.toggle()
                                            return
                                        }

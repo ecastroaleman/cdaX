@@ -13,5 +13,7 @@ struct User: Decodable {
     let access_token: String
     let token_type : String
     let expires_in: Int
+    let Apellido: String
+    let Rol: String
     
 }
