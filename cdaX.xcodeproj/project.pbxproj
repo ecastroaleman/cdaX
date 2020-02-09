@@ -16,6 +16,9 @@
 		DD69BD8E23EA664D0093BC08 /* Login.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD69BD8D23EA664D0093BC08 /* Login.swift */; };
 		DD69BD9023EA66AB0093BC08 /* Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD69BD8F23EA66AB0093BC08 /* Helpers.swift */; };
 		DD69BD9223EA67E80093BC08 /* BlurView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD69BD9123EA67E70093BC08 /* BlurView.swift */; };
+		DD69BD9423EE7D700093BC08 /* NetworkingService.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD69BD9323EE7D700093BC08 /* NetworkingService.swift */; };
+		DD69BD9623EE7DA00093BC08 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD69BD9523EE7DA00093BC08 /* User.swift */; };
+		DD69BD9823EE7DC90093BC08 /* ErrorResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD69BD9723EE7DC90093BC08 /* ErrorResponse.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +33,9 @@
 		DD69BD8D23EA664D0093BC08 /* Login.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Login.swift; sourceTree = "<group>"; };
 		DD69BD8F23EA66AB0093BC08 /* Helpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Helpers.swift; sourceTree = "<group>"; };
 		DD69BD9123EA67E70093BC08 /* BlurView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlurView.swift; sourceTree = "<group>"; };
+		DD69BD9323EE7D700093BC08 /* NetworkingService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkingService.swift; sourceTree = "<group>"; };
+		DD69BD9523EE7DA00093BC08 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		DD69BD9723EE7DC90093BC08 /* ErrorResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorResponse.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -70,6 +76,9 @@
 				DD69BD8723EA65E10093BC08 /* Info.plist */,
 				DD69BD8123EA65E10093BC08 /* Preview Content */,
 				DD69BD8D23EA664D0093BC08 /* Login.swift */,
+				DD69BD9323EE7D700093BC08 /* NetworkingService.swift */,
+				DD69BD9523EE7DA00093BC08 /* User.swift */,
+				DD69BD9723EE7DC90093BC08 /* ErrorResponse.swift */,
 				DD69BD8F23EA66AB0093BC08 /* Helpers.swift */,
 				DD69BD9123EA67E70093BC08 /* BlurView.swift */,
 			);
@@ -159,7 +168,10 @@
 				DD69BD7C23EA65D90093BC08 /* SceneDelegate.swift in Sources */,
 				DD69BD7E23EA65D90093BC08 /* ContentView.swift in Sources */,
 				DD69BD9023EA66AB0093BC08 /* Helpers.swift in Sources */,
+				DD69BD9623EE7DA00093BC08 /* User.swift in Sources */,
 				DD69BD8E23EA664D0093BC08 /* Login.swift in Sources */,
+				DD69BD9823EE7DC90093BC08 /* ErrorResponse.swift in Sources */,
+				DD69BD9423EE7D700093BC08 /* NetworkingService.swift in Sources */,
 				DD69BD9223EA67E80093BC08 /* BlurView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
