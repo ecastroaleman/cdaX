@@ -36,6 +36,7 @@
 		DD69BDB823EF9EEB0093BC08 /* LottieView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD69BDB723EF9EEB0093BC08 /* LottieView.swift */; };
 		DD69BDBB23EFA93A0093BC08 /* Lottie in Frameworks */ = {isa = PBXBuildFile; productRef = DD69BDBA23EFA93A0093BC08 /* Lottie */; };
 		DD69BDBD23EFCC220093BC08 /* CourseCocurricular.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD69BDBC23EFCC220093BC08 /* CourseCocurricular.swift */; };
+		DD69BDBF23EFE03E0093BC08 /* CourseCoCuInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD69BDBE23EFE03E0093BC08 /* CourseCoCuInfo.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -69,6 +70,7 @@
 		DD69BDB523EF9EBB0093BC08 /* ModalView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModalView.swift; sourceTree = "<group>"; };
 		DD69BDB723EF9EEB0093BC08 /* LottieView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LottieView.swift; sourceTree = "<group>"; };
 		DD69BDBC23EFCC220093BC08 /* CourseCocurricular.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CourseCocurricular.swift; sourceTree = "<group>"; };
+		DD69BDBE23EFE03E0093BC08 /* CourseCoCuInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CourseCoCuInfo.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -115,6 +117,7 @@
 				DD69BDAB23EF9E4D0093BC08 /* CertificateItem.swift */,
 				DD69BD9F23EF9CE30093BC08 /* CourseView.swift */,
 				DD69BDBC23EFCC220093BC08 /* CourseCocurricular.swift */,
+				DD69BDBE23EFE03E0093BC08 /* CourseCoCuInfo.swift */,
 				DD69BDA123EF9D020093BC08 /* CourseRow.swift */,
 				DD69BDAD23EF9E690093BC08 /* Settings.swift */,
 				DD69BDAF23EF9E7E0093BC08 /* UpdateList.swift */,
@@ -234,6 +237,7 @@
 				DD69BD9023EA66AB0093BC08 /* Helpers.swift in Sources */,
 				DD69BDB423EF9EA70093BC08 /* UpdateStore.swift in Sources */,
 				DD69BD9623EE7DA00093BC08 /* User.swift in Sources */,
+				DD69BDBF23EFE03E0093BC08 /* CourseCoCuInfo.swift in Sources */,
 				DD69BD9E23EF9CA60093BC08 /* HomeList.swift in Sources */,
 				DD69BD8E23EA664D0093BC08 /* Login.swift in Sources */,
 				DD69BDA423EF9D8A0093BC08 /* CardBottom.swift in Sources */,

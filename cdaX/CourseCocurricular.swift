@@ -62,6 +62,9 @@ struct CourseCocurricular: View {
                          
                         }
                         
+                       
+                       
+                        
                         Divider()
                         HStack {
                             Image(systemName: "book.circle")
@@ -176,14 +179,26 @@ struct CourseCocurricular: View {
                            .offset(y: 170)
                            .animation(Animation.easeOut(duration: 0.6))
                            
-                           Spacer()
+                           
+                
+                if (!self.alumno.isEmpty) {
+                CourseCoCuInfo(text: "Codigo Alumno C2061 \nCarrera: 04 - Highschool \nGrado: 10TH - Tenth Grade \nSecciòn: C")
+                    .background(Color.white)
+                    .cornerRadius(30)
+                    .frame(width: .infinity, height: 150)
+                    .padding(.top, 650)
+                
+                }
+                
+                
                        }
                        .background(BlurView(style: .systemMaterial))
                //        .edgesIgnoringSafeArea(.all)
-                       
+                  
     
                 //fin
-                
+      
+          
                 
               
           }
