@@ -10,14 +10,16 @@
 import SwiftUI
 
 struct HomeList : View {
+    var token: String
     var courses = coursesData
+    var apellidos: String
     @State var showCourseView = false
     var body: some View {
         ScrollView {
             HStack {
                 VStack(alignment: .leading) {
-                    Text("Courses").font(.largeTitle).fontWeight(.heavy)
-                    Text("21 courses").foregroundColor(.gray)
+                    Text("Menu Principal").font(.headline).fontWeight(.heavy)
+                    Text(self.apellidos).foregroundColor(.gray)
                 }
                 Spacer()
                 }
@@ -34,7 +36,7 @@ struct HomeList : View {
                                         (geometry.frame(in: .global).minX - 30) / -30
                                     )), axis: (x: 0, y: 10, z: 0))
                                     .sheet(isPresented: self.$showCourseView) {
-                                        CourseView(title: course.title, image: course.image)
+                                        CourseCocurricular(token: "", title: course.title, image: course.image)
                                     }
                             }
                         }
@@ -57,7 +59,7 @@ struct HomeList : View {
 #if DEBUG
 struct HomeBack_Previews : PreviewProvider {
     static var previews: some View {
-        HomeList()
+        HomeList(token: "", apellidos: "Sin apellidos")
     }
 }
 #endif
@@ -71,24 +73,24 @@ struct Course : Identifiable {
 }
 
 let coursesData = [
-    Course(title: "Build an app with SwiftUI",
-           image: "Illustration1",
+    Course(title: "Asignación Cursos Cocurriculares",
+           image: "CL",
            color: Color(hue: 0.677, saturation: 0.701, brightness: 0.788),
            shadowColor: Color(hue: 0.677, saturation: 0.701, brightness: 0.788, opacity: 0.5)),
-    Course(title: "Design and animate your UI",
-           image: "Illustration2",
+    Course(title: "Solicitar Cambio            de Bus",
+           image: "bus",
            color: Color(red: 0.9254901960784314, green: 0.49411764705882355, blue: 0.4823529411764706),
            shadowColor: Color(red: 0.9254901960784314, green: 0.49411764705882355, blue: 0.4823529411764706, opacity: 0.5)),
-    Course(title: "Swift UI Advanced",
-           image: "Illustration3",
+    Course(title: "Cafeteria",
+           image: "cafeteria",
            color: Color("background7"),
            shadowColor: Color(hue: 0.677, saturation: 0.701, brightness: 0.788, opacity: 0.5)),
-    Course(title: "Framer Playground",
+    Course(title: "Cambio de        Contraseña",
            image: "Illustration4",
            color: Color("background8"),
            shadowColor: Color(hue: 0.677, saturation: 0.701, brightness: 0.788, opacity: 0.5)),
-    Course(title: "Flutter for Designers",
-           image: "Illustration5",
+    Course(title: "Pedido Uniformes",
+           image: "uniformes",
            color: Color("background9"),
            shadowColor: Color(hue: 0.677, saturation: 0.701, brightness: 0.788, opacity: 0.5)),
 ]
@@ -100,8 +102,9 @@ struct CardView : View {
         return VStack(alignment: .leading) {
             Text(course.title)
                 .foregroundColor(.white)
-                .font(.title)
+                .font(.headline)
                 .fontWeight(.bold)
+                .multilineTextAlignment(.center)
                 .lineSpacing(6)
                 .lineLimit(4)
                 .padding(30)

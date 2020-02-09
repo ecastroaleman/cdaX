@@ -9,7 +9,7 @@
 import SwiftUI
 
 struct MenuView : View {
-    var menuItems = ["My Account", "Billing", "Team", "Sign out"]
+   // var menuItems = ["My Account", "Billing", "Team", "Sign out"]
     var menu: [Menu] = menuData
     var showModal = false
     var showSettings = false
@@ -68,10 +68,13 @@ struct Menu : Identifiable {
 }
 
 let menuData = [
-    Menu(title: "My Account", icon: "person.crop.circle"),
-    Menu(title: "Billing", icon: "creditcard"),
-    Menu(title: "Sign out", icon: "arrow.uturn.down"),
-    Menu(title: "Settings", icon: "gear")
+    Menu(title: "Inicio", icon: "person.crop.circle"),
+    Menu(title: "Asignaciòn", icon: "book.circle"),
+    Menu(title: "Buses", icon: "car"),
+    Menu(title: "Cafeteria", icon: "tray.fill"),
+    Menu(title: "Configuracion", icon: "paperclip.circle.fill"),
+    Menu(title: "Uniformes", icon: "bag"),
+    Menu(title: "Salir", icon: "xmark.seal.fill")
 ]
 
 #if DEBUG

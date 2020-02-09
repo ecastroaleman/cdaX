@@ -9,16 +9,20 @@
 import SwiftUI
 
 struct Home : View {
+    var token: String
+    var apellidos: String
     @State var show = false
     @State var showCertificates = false
     @State var viewState = CGSize.zero
     @State var showLogin = false
+    
     var menu: [Menu] = menuData
+
     
     var body: some View {
         ZStack {
             
-            HomeList(courses: coursesData)
+            HomeList(token: token, courses: coursesData, apellidos: self.apellidos)
                 .blur(radius: show ? 50 : 0)
                 .scaleEffect(showLogin ? 0.95 : 1)
                 .animation(.default)
@@ -88,7 +92,7 @@ struct Home : View {
 struct Home_Previews : PreviewProvider {
     static var previews: some View {
         Group {
-            Home(menu: menuData)
+            Home(token: "Sin Token", apellidos: "Sin Apellidos Home.swift", menu: menuData)
 //                .environment(\.colorScheme, .dark)
 //                .previewDevice("iPhone 8")
 //                .environment(\.sizeCategory, .extraExtraExtraLarge)

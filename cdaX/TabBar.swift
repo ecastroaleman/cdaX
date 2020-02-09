@@ -11,7 +11,7 @@ import SwiftUI
 struct TabBar : View {
     var body: some View {
         TabView {
-            Home()
+            Home(token: "", apellidos: "")
                 .tabItem({
                     Image("IconHome")
                     Text("Home")

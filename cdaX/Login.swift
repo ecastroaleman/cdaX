@@ -22,8 +22,11 @@ var isScreenTall2 = screen2.height > 736 ? true : false
 struct Login: View {
     @State var email: String = "c206"
     @State var password: String = "c206"
+    @State var token = ""
+    @State var apellidos = ""
     @Binding var show: Bool
     @State private var showAlert = false
+    @State private var showHome = false
      let networkingService = NetworkingService()
     //   var token = ""
    @State private var esMaestro = 0
@@ -158,11 +161,12 @@ struct Login: View {
                             switch result {
                                        case .success(let user):
                                           
-                                        var token = user.access_token
-                                        print("apellido -> \(user.Apellido)")
+                                        self.token = user.access_token
+                                        self.apellidos = user.Apellido
                                         print("rol -> \(user.Rol)")
                                         /*  self.performSegue(withIdentifier: "menuPrincipal", sender: user)*/
-                                        print("Login exitoso -> \(token)")
+                                      //  print("Login exitoso -> \(token)")
+                                        self.showHome = true
                                        case .failure(let error):
                                           // var retorno = ""
                                            if (error.localizedDescription == "invalid_grant"){
@@ -194,6 +198,9 @@ struct Login: View {
                         enviarAlerta(msg: "Usuario o Password Invalido")
                     
                 })
+                    .sheet(isPresented: $showHome ){
+                        Home(token: self.token, apellidos: self.apellidos)
+                }
                 /*.onTapGesture {
                     if(self.email.isEmpty) {
                     
@@ -227,6 +234,5 @@ struct Login_Previews: PreviewProvider {
     }
 }
 #endif
-
 
 
