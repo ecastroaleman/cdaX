@@ -13,15 +13,42 @@ struct CourseCocurricular: View {
     @State var alumno: String = ""
      @State var curso: String = ""
      @State var horario: String = ""
-     @State var fechaInicio: String = ""
+     @State var fechaInicio = Date()
+      @State var fechaInicio2 = ""
+    @State var showPickerView = false
      @State private var showAlert = false
+     @State private var showDatosAlumno = true
+    @State private var alumnoIndex = 0
+    
+    var alumnos = ["Vianka Castro","Rasmus Castro","Emilio Castro"]
+     var cursos = ["Matematica","Artes Plasticas","Guitarra"]
+    var horarios = ["Lunes y Miercoles 10:30","Martes y Jueves 11:30","Viernes 12:30"]
      var title = "Asignaciòn Cursos \n Co-curriculares"
       var image = "Illustration1"
+    
+    private var dateProxy:Binding<Date> {
+           Binding<Date>(get: {self.fechaInicio }, set: {
+               self.fechaInicio = $0
+             var formatter = DateFormatter()
+               formatter.dateFormat = "dd-MM-yyyy"
+            self.fechaInicio2 = formatter.string(from: $0)
+            self.showPickerView = false
+           })
+       }
       var body: some View {
-        //  GeometryReader { geometry in
+         // GeometryReader { geometry in
+        
+     
+        
               ZStack {
-                  Rectangle()
-                      .fill(LinearGradient(gradient: Gradient(colors: [Color("gradient1"), Color("gradient2")]), startPoint: .top, endPoint: .bottom))
+                
+             
+                     
+                
+                Rectangle()
+                                    .fill(LinearGradient(gradient: Gradient(colors: [Color("gradient1"), Color("gradient2")]), startPoint: .top, endPoint: .bottom))
+                
+                
                   
                   VStack(alignment: .center) {
                       VStack(alignment: .center) {
@@ -47,20 +74,41 @@ struct CourseCocurricular: View {
                           .padding()*/
                     
                     VStack {
+                       
                         HStack {
                             Image(systemName: "person")
-                           .frame(width: 16, height: 16)
-                           .foregroundColor(Color("loginicon"))
-                           .padding(.all)
-                           .background(Color("background"))
-                           .cornerRadius(16)
+                                .frame(width: 16, height: 16)
+                                .foregroundColor(Color("loginicon"))
+                                .padding(.all)
+                                .background(Color("background"))
+                                .cornerRadius(16)
                                 .padding(12)
+                                
                             
-                          TextField("Seleccione Alumno", text: $alumno)
-                              .frame(height: 72)
-                           
-                         
+                            
+                            TextField("Seleccione Alumno: ", text: $alumno)
+                            .frame(height: 72)
+                                 .disabled(true)
+                                .contextMenu{
+                                    VStack {
+                                        ForEach(0 ..< self.alumnos.count) { index in
+                                            Button(action: {self.alumno = self.alumnos[index] }) {
+                                            HStack {
+                                                Text(self.alumnos[index])
+                                                Image(systemName: "person")
+                                                
+                                                
+                                                
+                                            }//HStck
+                                        }//Button
+                                        } //ForEach
+                                       
+                                }//VStack
+                            }//contextMenu
+                               
+                            
                         }
+                        
                         
                        
                        
@@ -76,6 +124,23 @@ struct CourseCocurricular: View {
                                 .padding(12)
                             TextField("Seleccione Curso", text: $curso)
                                 .frame(height: 72)
+                            .disabled(true)
+                            .contextMenu{
+                                    VStack {
+                                        ForEach(0 ..< self.cursos.count) { index in
+                                            Button(action: {self.curso = self.cursos[index] }) {
+                                            HStack {
+                                                Text(self.cursos[index])
+                                                Image(systemName: "book.circle")
+                                                
+                                                
+                                                
+                                            }//HStck
+                                        }//Button
+                                        } //ForEach
+                                       
+                                }//VStack
+                            }//contextMenu
                             
                         }
                         
@@ -88,8 +153,25 @@ struct CourseCocurricular: View {
                                 .background(Color("background"))
                                 .cornerRadius(16)
                                 .padding(12)
-                            TextField("Seleccione Horario", text: $fechaInicio)
+                            TextField("Seleccione Horario", text: $horario)
                                 .frame(height: 72)
+                            .disabled(true)
+                                .contextMenu{
+                                    VStack {
+                                        ForEach(0 ..< self.horarios.count) { index in
+                                            Button(action: {self.horario = self.horarios[index] }) {
+                                                HStack {
+                                                    Text(self.horarios[index])
+                                                    Image(systemName: "clock")
+                                                    
+                                                    
+                                                    
+                                                }//HStck
+                                            }//Button
+                                        } //ForEach
+                                        
+                                    }//VStack
+                            }//contextMenu
                             
                         }
                         
@@ -102,9 +184,24 @@ struct CourseCocurricular: View {
                                 .background(Color("background"))
                                 .cornerRadius(16)
                                 .padding(12)
-                            TextField("Seleccione Inicio del Curso", text: $horario)
-                                .frame(height: 72)
+                      
+                            TextField("Seleccione Fecha Inicio", text: $fechaInicio2)
+                                                           .frame(height: 72)
+                                .disabled(true)
+                                .onTapGesture {
+                                    self.showPickerView =  true
+                                  }
                             
+                          //  Form {
+                              //  Section ()  {
+                            if (self.showPickerView) {
+                                    DatePicker(selection: dateProxy, displayedComponents: .date ,  label: { Text("Seleccione") })
+                                
+                            }
+                               // }//Section
+                           // }//form
+                                                      
+                          
                         }
                         
                     } .background(Color.white)
@@ -176,19 +273,19 @@ struct CourseCocurricular: View {
                            }
                            .padding(36)
                            .opacity(1)
-                           .offset(y: 170)
+                           .offset(y: showPickerView ? 280 : 170)
                            .animation(Animation.easeOut(duration: 0.6))
                            
                            
-                
-                if (!self.alumno.isEmpty) {
-                CourseCoCuInfo(text: "Codigo Alumno C2061 \nCarrera: 04 - Highschool \nGrado: 10TH - Tenth Grade \nSecciòn: C")
+               
+               
+           /*     CourseCoCuInfo(text: "Codigo Alumno C2061 \nCarrera: 04 - Highschool \nGrado: 10TH - Tenth Grade \nSecciòn: C")
                     .background(Color.white)
                     .cornerRadius(30)
                     .frame(width: .infinity, height: 150)
-                    .padding(.top, 650)
+                    .padding(.top, 650)*/
+                   
                 
-                }
                 
                 
                        }
@@ -202,7 +299,7 @@ struct CourseCocurricular: View {
                 
               
           }
-   //   }
+     //}
 }
 
 struct CourseCocurricular_Previews: PreviewProvider {

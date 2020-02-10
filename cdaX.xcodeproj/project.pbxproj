@@ -37,6 +37,7 @@
 		DD69BDBB23EFA93A0093BC08 /* Lottie in Frameworks */ = {isa = PBXBuildFile; productRef = DD69BDBA23EFA93A0093BC08 /* Lottie */; };
 		DD69BDBD23EFCC220093BC08 /* CourseCocurricular.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD69BDBC23EFCC220093BC08 /* CourseCocurricular.swift */; };
 		DD69BDBF23EFE03E0093BC08 /* CourseCoCuInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD69BDBE23EFE03E0093BC08 /* CourseCoCuInfo.swift */; };
+		DD69BDC123F0C1050093BC08 /* TestingFunctions.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD69BDC023F0C1040093BC08 /* TestingFunctions.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -71,6 +72,7 @@
 		DD69BDB723EF9EEB0093BC08 /* LottieView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LottieView.swift; sourceTree = "<group>"; };
 		DD69BDBC23EFCC220093BC08 /* CourseCocurricular.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CourseCocurricular.swift; sourceTree = "<group>"; };
 		DD69BDBE23EFE03E0093BC08 /* CourseCoCuInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CourseCoCuInfo.swift; sourceTree = "<group>"; };
+		DD69BDC023F0C1040093BC08 /* TestingFunctions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestingFunctions.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -127,6 +129,7 @@
 				DD69BD9123EA67E70093BC08 /* BlurView.swift */,
 				DD69BDB723EF9EEB0093BC08 /* LottieView.swift */,
 				DD69BD8F23EA66AB0093BC08 /* Helpers.swift */,
+				DD69BDC023F0C1040093BC08 /* TestingFunctions.swift */,
 				DD69BD7F23EA65E10093BC08 /* Assets.xcassets */,
 				DD69BD8423EA65E10093BC08 /* LaunchScreen.storyboard */,
 				DD69BD8723EA65E10093BC08 /* Info.plist */,
@@ -232,6 +235,7 @@
 				DD69BDBD23EFCC220093BC08 /* CourseCocurricular.swift in Sources */,
 				DD69BDB223EF9E910093BC08 /* UpdateDetail.swift in Sources */,
 				DD69BDA223EF9D020093BC08 /* CourseRow.swift in Sources */,
+				DD69BDC123F0C1050093BC08 /* TestingFunctions.swift in Sources */,
 				DD69BD7E23EA65D90093BC08 /* ContentView.swift in Sources */,
 				DD69BDB023EF9E7E0093BC08 /* UpdateList.swift in Sources */,
 				DD69BD9023EA66AB0093BC08 /* Helpers.swift in Sources */,
