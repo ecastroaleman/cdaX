@@ -29,7 +29,7 @@ struct CourseCocurricular: View {
     private var dateProxy:Binding<Date> {
            Binding<Date>(get: {self.fechaInicio }, set: {
                self.fechaInicio = $0
-             var formatter = DateFormatter()
+            let formatter = DateFormatter()
                formatter.dateFormat = "dd-MM-yyyy"
             self.fechaInicio2 = formatter.string(from: $0)
             self.showPickerView = false
