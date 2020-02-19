@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		DD419FA023F504660089268E /* CourseBusChange.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD419F9F23F504660089268E /* CourseBusChange.swift */; };
 		DD69BD7A23EA65D90093BC08 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD69BD7923EA65D90093BC08 /* AppDelegate.swift */; };
 		DD69BD7C23EA65D90093BC08 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD69BD7B23EA65D90093BC08 /* SceneDelegate.swift */; };
 		DD69BD7E23EA65D90093BC08 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD69BD7D23EA65D90093BC08 /* ContentView.swift */; };
@@ -41,6 +42,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		DD419F9F23F504660089268E /* CourseBusChange.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CourseBusChange.swift; sourceTree = "<group>"; };
 		DD69BD7623EA65D90093BC08 /* cdaX.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = cdaX.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DD69BD7923EA65D90093BC08 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		DD69BD7B23EA65D90093BC08 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -120,6 +122,7 @@
 				DD69BD9F23EF9CE30093BC08 /* CourseView.swift */,
 				DD69BDBC23EFCC220093BC08 /* CourseCocurricular.swift */,
 				DD69BDBE23EFE03E0093BC08 /* CourseCoCuInfo.swift */,
+				DD419F9F23F504660089268E /* CourseBusChange.swift */,
 				DD69BDA123EF9D020093BC08 /* CourseRow.swift */,
 				DD69BDAD23EF9E690093BC08 /* Settings.swift */,
 				DD69BDAF23EF9E7E0093BC08 /* UpdateList.swift */,
@@ -247,6 +250,7 @@
 				DD69BDA423EF9D8A0093BC08 /* CardBottom.swift in Sources */,
 				DD69BD9C23EF9C750093BC08 /* MenuView.swift in Sources */,
 				DD69BDAE23EF9E690093BC08 /* Settings.swift in Sources */,
+				DD419FA023F504660089268E /* CourseBusChange.swift in Sources */,
 				DD69BDB623EF9EBB0093BC08 /* ModalView.swift in Sources */,
 				DD69BDA023EF9CE30093BC08 /* CourseView.swift in Sources */,
 				DD69BD9823EE7DC90093BC08 /* ErrorResponse.swift in Sources */,

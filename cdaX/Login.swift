@@ -199,7 +199,8 @@ struct Login: View {
                     
                 })
                     .sheet(isPresented: $showHome ){
-                        Home(token: self.token, apellidos: self.apellidos)
+                        Home(token: self.token, apellidos: self.apellidos).edgesIgnoringSafeArea(.all)
+                        
                 }
                 /*.onTapGesture {
                     if(self.email.isEmpty) {
@@ -219,7 +220,7 @@ struct Login: View {
             Spacer()
         }
         .background(BlurView(style: .systemMaterial))
-//        .edgesIgnoringSafeArea(.all)
+       .edgesIgnoringSafeArea(.all)
         
        
         

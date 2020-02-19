@@ -23,7 +23,7 @@ struct CourseCocurricular: View {
     var alumnos = ["Vianka Castro","Rasmus Castro","Emilio Castro"]
      var cursos = ["Matematica","Artes Plasticas","Guitarra"]
     var horarios = ["Lunes y Miercoles 10:30","Martes y Jueves 11:30","Viernes 12:30"]
-     var title = "Asignaciòn Cursos \n Co-curriculares"
+     var title = "Asignaciòn Cursos \nCo-curriculares"
       var image = "Illustration1"
     
     private var dateProxy:Binding<Date> {
@@ -51,14 +51,16 @@ struct CourseCocurricular: View {
                 
                   
                   VStack(alignment: .center) {
-                      VStack(alignment: .center) {
-                          Text(self.title)
-                              .foregroundColor(Color("primary"))
-                              .font(.title)
-                              .fontWeight(.heavy)
-                              .lineLimit(2)
-                            .frame(minWidth: 0, maxWidth: .infinity, alignment: .center)
-                              .frame(height: 120)
+                  VStack(alignment: .center) {
+                      Text(self.title)
+                          .foregroundColor(Color("primary"))
+                          .font(.title)
+                          .fontWeight(.heavy)
+                        .multilineTextAlignment(.center)
+                        .lineLimit(2)
+                        .padding(1.0)
+                        .frame(minWidth: 0, maxWidth: .infinity, alignment: .center)
+                          .frame(height: 120)
                             
                         
                         /*  Text("10 sections")

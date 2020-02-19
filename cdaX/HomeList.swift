@@ -36,7 +36,7 @@ struct HomeList : View {
             ScrollView(.horizontal, showsIndicators: false) {
                 HStack(spacing: 20) {
                    
-                    //Primero
+                    //Cursos Cocurriculares 0
                     GeometryReader { geometry in
                         Button(action: {self.showCourseCocu.toggle()})
                         {
@@ -51,7 +51,7 @@ struct HomeList : View {
                     }//Geometry
                     .frame(width: 246, height: 360)
                    
-                    //Segundo
+                    //Cambio de Bus 1
                     GeometryReader { geometry in
                                            Button(action: {self.showCambioBus.toggle()})
                                            {
@@ -60,12 +60,12 @@ struct HomeList : View {
                                                        (geometry.frame(in: .global).minX - 30) / -30
                                                    )), axis: (x: 0, y: 10, z: 0))
                                                    .sheet(isPresented: self.$showCambioBus) {
-                                                       CourseCocurricular(token: "", title: self.courses[1].title, image: self.courses[1].image)
+                                                       CourseBusChange(token: "", title: self.courses[1].title, image: self.courses[1].image)
                                                }
                                            }
                                        }//Geometry
                                        .frame(width: 246, height: 360)
-                    //Tercero
+                    //Cafeteria 2
                     GeometryReader { geometry in
                                                               Button(action: {self.showCafeteria.toggle()})
                                                               {
@@ -79,7 +79,7 @@ struct HomeList : View {
                                                               }
                                                           }//Geometry
                                                           .frame(width: 246, height: 360)
-                    //Cuarto
+                    //Cambio PAssword 3
                     GeometryReader { geometry in
                                                               Button(action: {self.showCambiopass.toggle()})
                                                               {
@@ -93,7 +93,7 @@ struct HomeList : View {
                                                               }
                                                           }//Geometry
                                                           .frame(width: 246, height: 360)
-                    //Quinto
+                    //Pedido  Uniformes 4
                     GeometryReader { geometry in
                                                               Button(action: {self.showUniformes.toggle()})
                                                               {
