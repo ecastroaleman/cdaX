@@ -8,6 +8,10 @@
 
 /* Begin PBXBuildFile section */
 		DD419FA023F504660089268E /* CourseBusChange.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD419F9F23F504660089268E /* CourseBusChange.swift */; };
+		DD544C152401E63B001D9327 /* UniformesMain.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD544C142401E63B001D9327 /* UniformesMain.swift */; };
+		DD544C172401F25B001D9327 /* UniformesRow1.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD544C162401F25B001D9327 /* UniformesRow1.swift */; };
+		DD544C192401F2A5001D9327 /* UniformesRowItem1.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD544C182401F2A5001D9327 /* UniformesRowItem1.swift */; };
+		DD544C1B2401F4E9001D9327 /* UniformesRow2.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD544C1A2401F4E9001D9327 /* UniformesRow2.swift */; };
 		DD69BD7A23EA65D90093BC08 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD69BD7923EA65D90093BC08 /* AppDelegate.swift */; };
 		DD69BD7C23EA65D90093BC08 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD69BD7B23EA65D90093BC08 /* SceneDelegate.swift */; };
 		DD69BD7E23EA65D90093BC08 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD69BD7D23EA65D90093BC08 /* ContentView.swift */; };
@@ -43,6 +47,10 @@
 
 /* Begin PBXFileReference section */
 		DD419F9F23F504660089268E /* CourseBusChange.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CourseBusChange.swift; sourceTree = "<group>"; };
+		DD544C142401E63B001D9327 /* UniformesMain.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UniformesMain.swift; sourceTree = "<group>"; };
+		DD544C162401F25B001D9327 /* UniformesRow1.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UniformesRow1.swift; sourceTree = "<group>"; };
+		DD544C182401F2A5001D9327 /* UniformesRowItem1.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UniformesRowItem1.swift; sourceTree = "<group>"; };
+		DD544C1A2401F4E9001D9327 /* UniformesRow2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UniformesRow2.swift; sourceTree = "<group>"; };
 		DD69BD7623EA65D90093BC08 /* cdaX.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = cdaX.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DD69BD7923EA65D90093BC08 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		DD69BD7B23EA65D90093BC08 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -125,6 +133,10 @@
 				DD419F9F23F504660089268E /* CourseBusChange.swift */,
 				DD69BDA123EF9D020093BC08 /* CourseRow.swift */,
 				DD69BDAD23EF9E690093BC08 /* Settings.swift */,
+				DD544C142401E63B001D9327 /* UniformesMain.swift */,
+				DD544C162401F25B001D9327 /* UniformesRow1.swift */,
+				DD544C1A2401F4E9001D9327 /* UniformesRow2.swift */,
+				DD544C182401F2A5001D9327 /* UniformesRowItem1.swift */,
 				DD69BDAF23EF9E7E0093BC08 /* UpdateList.swift */,
 				DD69BDB123EF9E910093BC08 /* UpdateDetail.swift */,
 				DD69BDB323EF9EA70093BC08 /* UpdateStore.swift */,
@@ -245,6 +257,7 @@
 				DD69BDB423EF9EA70093BC08 /* UpdateStore.swift in Sources */,
 				DD69BD9623EE7DA00093BC08 /* User.swift in Sources */,
 				DD69BDBF23EFE03E0093BC08 /* CourseCoCuInfo.swift in Sources */,
+				DD544C1B2401F4E9001D9327 /* UniformesRow2.swift in Sources */,
 				DD69BD9E23EF9CA60093BC08 /* HomeList.swift in Sources */,
 				DD69BD8E23EA664D0093BC08 /* Login.swift in Sources */,
 				DD69BDA423EF9D8A0093BC08 /* CardBottom.swift in Sources */,
@@ -253,10 +266,13 @@
 				DD419FA023F504660089268E /* CourseBusChange.swift in Sources */,
 				DD69BDB623EF9EBB0093BC08 /* ModalView.swift in Sources */,
 				DD69BDA023EF9CE30093BC08 /* CourseView.swift in Sources */,
+				DD544C152401E63B001D9327 /* UniformesMain.swift in Sources */,
 				DD69BD9823EE7DC90093BC08 /* ErrorResponse.swift in Sources */,
 				DD69BD9423EE7D700093BC08 /* NetworkingService.swift in Sources */,
 				DD69BDAA23EF9E370093BC08 /* CertificateRow.swift in Sources */,
 				DD69BD9223EA67E80093BC08 /* BlurView.swift in Sources */,
+				DD544C172401F25B001D9327 /* UniformesRow1.swift in Sources */,
+				DD544C192401F2A5001D9327 /* UniformesRowItem1.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -13,11 +13,11 @@ struct Home : View {
     var apellidos: String
     @State var show = false
     @State var showCertificates = false
+     @State var showUniformesMain = false
     @State var viewState = CGSize.zero
     @State var showLogin = false
     
     var menu: [Menu] = menuData
-
     
     var body: some View {
         ZStack {
@@ -40,7 +40,7 @@ struct Home : View {
                 .offset(y: -viewState.height/10)
                 .animation(.default)
             
-            MenuRight(showCertificates: $showCertificates, showLogin: $showLogin)
+            MenuRight(showCertificates: $showCertificates, showLogin: $showLogin, showUniformesMain: $showUniformesMain)
                 .blur(radius: showCertificates ? 6-viewState.height/30 : 0)
                 .offset(y: -viewState.height/20)
                 .animation(.default)
@@ -130,11 +130,19 @@ struct MenuRight : View {
     @Binding var showCertificates: Bool
     @State var showUpdateList = false
     @Binding var showLogin: Bool
+    @Binding var showUniformesMain: Bool
     
     var body: some View {
         return VStack {
             HStack(spacing: 12) {
                 Spacer()
+                VStack { Image(systemName: "cart") }
+                .frame(width: 44, height: 44)
+                .background(Color("button"))
+                .foregroundColor(.primary)
+                .cornerRadius(22)
+                .shadow(color: Color("buttonShadow"), radius: 10, x: 0, y: 10)
+                    .onTapGesture { self.showUniformesMain.toggle() }
                 
                 VStack { Image(systemName: "rectangle.stack") }
                     .frame(width: 44, height: 44)
