@@ -33,6 +33,9 @@ struct CourseBusChange: View {
     var title = "Solicitud de \nCambio de Bus"
     var image = "Illustration1"
     
+      @State var selected = " NO Baja Solo "
+    var types = [" SI Baja Solo "," NO Baja Solo "]
+    
     private var dateProxy:Binding<Date> {
         Binding<Date>(get: {self.fechaInicio }, set: {
             self.fechaInicio = $0
@@ -122,8 +125,40 @@ struct CourseBusChange: View {
          
          HStack {
          Icono(type: "car", color: "loginicon")
-         
-         VStack {
+            
+            Picker(selection: self.$bajaSolo, label: Text("Tipo de Autenticaciòn: ")) {
+                                        Text("SI Baja Solo").tag(0)
+                                        Text("NO Baja Solo").tag(1)
+                      }.padding(.horizontal, 5)
+                          .pickerStyle(SegmentedPickerStyle())
+
+                     
+            
+       /*   HStack{
+                
+            ForEach(self.types,id: \.self){ i in
+                    
+                    HStack{
+                        
+                        Button(action: {
+                            
+                            self.selected = i
+                            
+                        }) {
+                            
+                            Text(i).padding()
+                        }
+                        .foregroundColor(self.selected == i ? .white : .black)
+                        .background(self.selected == i ? Color(#colorLiteral(red: 0.2549019754, green: 0.2745098174, blue: 0.3019607961, alpha: 1)) : Color(#colorLiteral(red: 0.8039215803, green: 0.8039215803, blue: 0.8039215803, alpha: 1)))
+                        .cornerRadius(10)
+                        
+                        Spacer(minLength: 0)
+                        
+                    }
+                }
+            }*/
+            
+         /*VStack {
          Text("Puede Bajar Solo ? ")
          .font(.footnote)
          .fontWeight(.thin)
@@ -140,7 +175,7 @@ struct CourseBusChange: View {
               //  .background(self.bajaSolo == 1 ? Color(#colorLiteral(red: 0.3411764801, green: 0.6235294342, blue: 0.1686274558, alpha: 1)) : Color(#colorLiteral(red: 0.7450980544, green: 0.1568627506, blue: 0.07450980693, alpha: 1)))
             
          
-         }
+         }*/
          }
             
             HStack {
@@ -153,7 +188,7 @@ struct CourseBusChange: View {
                 }//Hstack
   
             HStack {
-                Icono(type: "person", color: "loginicon")
+                Icono(type: "car", color: "loginicon")
                 VStack {
         
                 TextField("Viajarà en carro con:", text: self.$viajacon)

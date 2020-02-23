@@ -6,15 +6,9 @@
 //  Copyright © 2020 Emilio Castro. All rights reserved.
 //
 
-//
-//  Login.swift
-//  SwiftUI-DesignCode
-//
-//  Created by Meng To on 7/26/19.
-//  Copyright © 2019 Meng To. All rights reserved.
-//
-
 import SwiftUI
+import Combine
+
 let screen2 = UIScreen.main.bounds
 var isScreenTall2 = screen2.height > 736 ? true : false
   
@@ -28,6 +22,10 @@ struct Login: View {
     @State private var showAlert = false
     @State private var showHome = false
      let networkingService = NetworkingService()
+    @State var selection: Int? = nil
+    @EnvironmentObject var viewRouter: ViewRouter
+   
+    
     //   var token = ""
    @State private var esMaestro = 0
     func enviarAlerta(msg: String) -> Alert {
@@ -36,7 +34,11 @@ struct Login: View {
                         }
         return alert2
               } //fin func
+    
     var body: some View {
+        
+        NavigationView {
+      
         VStack(spacing: 0) {
             
             VStack(spacing: 20) {
@@ -146,13 +148,17 @@ struct Login: View {
                     .font(.subheadline)
                     .underline()
                     .padding(.leading, 12)
+                    
+                      Spacer()
                 }
-                Spacer()
                 
+          //     NavigationLink(destination: Home(token: self.token, apellidos: self.apellidos), tag: 0, selection: $selection) {
+                                                                        
                 Button(action: {
                     
                     if (self.email.isEmpty || self.password.isEmpty) {
                       self.showAlert.toggle()
+                        self.selection = nil
                     }else {
                         let parameters = ["username": self.email, "password": self.password,"grant_type":"password"]
                         
@@ -167,8 +173,11 @@ struct Login: View {
                                         /*  self.performSegue(withIdentifier: "menuPrincipal", sender: user)*/
                                       //  print("Login exitoso -> \(token)")
                                         self.showHome = true
+                                       self.viewRouter.currentPage = "home"
+                                  self.selection = 0
                                        case .failure(let error):
                                           // var retorno = ""
+                                         self.selection = nil
                                            if (error.localizedDescription == "invalid_grant"){
                                            
                                            } //else {retorno = error.localizedDescription}
@@ -185,54 +194,66 @@ struct Login: View {
                     
                     
                 }) {
-                    Text("Log in").foregroundColor(.white)
+                    Text("Ingresar").foregroundColor(.white)
                 }
                 .padding(.horizontal, 36)
                 .padding(.vertical, 12)
                 .background(Color("background3"))
                 .clipShape(RoundedRectangle(cornerRadius: 16, style: .continuous))
                 .alert(isPresented: $showAlert, content: { //self.alert2
-                    
                     email.isEmpty ? enviarAlerta(msg: "Debe ingresar su usuario") :
                         password.isEmpty ?  enviarAlerta(msg: "Debe ingresar su password")  :
                         enviarAlerta(msg: "Usuario o Password Invalido")
                     
                 })
-                    .sheet(isPresented: $showHome ){
+                
+         //navigationlink       }
+                
+             /*   .actionSheet(isPresented: $showHome, content: {
+                    ActionSheet(title: Text("iOSDevCenters"), message: Text("SubTitle"), buttons: [
+                        .default(Text("Save"), action: {
+                            print("Save")
+                        }),
+                        .default(Text("Delete"), action: {
+                            print("Delete")
+                        }),
+                        .destructive(Text("Cancel"))
+                        ])
+                })*/
+                 /*    .popover(isPresented: $showHome, arrowEdge: .bottom, content: { Home(token: self.token, apellidos: self.apellidos)
+                        
+                    })
+                   .sheet(isPresented: $showHome ){
                         Home(token: self.token, apellidos: self.apellidos).edgesIgnoringSafeArea(.all)
                         
-                }
-                /*.onTapGesture {
-                    if(self.email.isEmpty) {
-                    
-                        Alert(title: Text("Valida Datos"), message: Text("Debe ingresar su usuario"), dismissButton: .default(Text("Aceptar")))
-                        
-                       
-                             
-                    }
-                }*/
+                }.edgesIgnoringSafeArea(.all)*/
+                
             }
             .padding(16)
             .opacity(show ? 1 : 0)
             .offset(y: show ? 0 : 20)
             .animation(Animation.easeOut(duration: 0.6))
             
+          
             Spacer()
         }
         .background(BlurView(style: .systemMaterial))
        .edgesIgnoringSafeArea(.all)
         
-       
-        
     }
+        
+    } //body: some View
    
 }
 
 #if DEBUG
 struct Login_Previews: PreviewProvider {
     static var previews: some View {
-        Login(show: .constant(true))
-    }
+  
+        Login(show: .constant(true)).environmentObject(ViewRouter())
+       
+        }
+    
 }
 #endif
 
