@@ -177,6 +177,7 @@ struct Login: View {
                                   self.selection = 0
                                        case .failure(let error):
                                           // var retorno = ""
+                                        self.showHome = false
                                          self.selection = nil
                                            if (error.localizedDescription == "invalid_grant"){
                                            
